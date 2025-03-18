@@ -5,13 +5,13 @@ public class Personaje {
     private int  nivel_de_personaje;
 
     private int puntosdeVida;
-    private String inventario ;
+    private  Inventario inventarioPersonaje ;
 
-    public Personaje(String nombre , int nivel_de_personaje , int puntosdeVida , String inventario){
+    public Personaje(String nombre , int nivel_de_personaje , int puntosdeVida , Inventario inventario){
         this.nombre = nombre;
         this.nivel_de_personaje = nivel_de_personaje;
         this.puntosdeVida = puntosdeVida;
-        this.inventario = inventario;
+        this.inventarioPersonaje = inventario;
     }
 
     public String getNombre() {
@@ -30,12 +30,12 @@ public class Personaje {
         this.nivel_de_personaje = nivel_de_personaje;
     }
 
-    public String getInventario() {
-        return inventario;
+    public Inventario getInventarioPersonaje() {
+        return inventarioPersonaje;
     }
 
-    public void setInventario(String inventario) {
-        this.inventario = inventario;
+    public void setInventario(Inventario inventario) {
+        this.inventarioPersonaje = inventario;
     }
     public  int getPuntosdeVida(){
         return puntosdeVida;
@@ -46,7 +46,7 @@ public class Personaje {
     }
 
     public String toString() {
-        return "Nombre: " + nombre + ", Nivel : " + nivel_de_personaje+ ", Puntos de vida: " + puntosdeVida + ", Inventario: " + inventario;
+        return "Nombre: " + nombre + ", Nivel : " + nivel_de_personaje+ ", Puntos de vida: " + puntosdeVida + ", Inventario: " + inventarioPersonaje;
     }
 
 
