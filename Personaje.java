@@ -40,8 +40,14 @@ public class Personaje {
     public  int getPuntosdeVida(){
         return puntosdeVida;
     }
+    public void setPuntosdeVida(int puntosdeVida){
+        this.puntosdeVida = puntosdeVida;
 
+    }
 
+    public String toString() {
+        return "Nombre: " + nombre + ", Nivel : " + nivel_de_personaje+ ", Puntos de vida: " + puntosdeVida + ", Inventario: " + inventario;
+    }
 
 
 }
