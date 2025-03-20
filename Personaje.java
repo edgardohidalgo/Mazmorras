@@ -1,13 +1,11 @@
 public class Personaje {
 
     private String nombre;
-
-    private int  nivel_de_personaje;
-
+    private int nivel_de_personaje;
     private int puntosdeVida;
-    private  Inventario inventarioPersonaje ;
+    private Inventario inventarioPersonaje;
 
-    public Personaje(String nombre , int nivel_de_personaje , int puntosdeVida , Inventario inventario){
+    public Personaje(String nombre, int nivel_de_personaje, int puntosdeVida, Inventario inventario) {
         this.nombre = nombre;
         this.nivel_de_personaje = nivel_de_personaje;
         this.puntosdeVida = puntosdeVida;
@@ -37,16 +35,34 @@ public class Personaje {
     public void setInventario(Inventario inventario) {
         this.inventarioPersonaje = inventario;
     }
-    public  int getPuntosdeVida(){
+
+    public int getPuntosdeVida() {
         return puntosdeVida;
     }
-    public void setPuntosdeVida(int puntosdeVida){
-        this.puntosdeVida = puntosdeVida;
 
+    public void setPuntosdeVida(int puntosdeVida) {
+        this.puntosdeVida = puntosdeVida;
     }
 
-    public String toString() {
-        return "Nombre: " + nombre + ", Nivel : " + nivel_de_personaje+ ", Puntos de vida: " + puntosdeVida + ", Inventario: " + inventarioPersonaje;
+    public void mostrarInfo() {
+        System.out.println("Nombre: " + nombre + ", Nivel: " + nivel_de_personaje + ", Puntos de vida: " + puntosdeVida);
+    }
+
+    public void bajarVida(int vida) {
+        this.puntosdeVida -= vida;
+        if (this.puntosdeVida < 0) {
+            this.puntosdeVida = 0;
+        }
+        System.out.println(nombre + " ha recibido " + vida + " de daño. Puntos de vida que le quedan: " + puntosdeVida);
+    }
+
+    public Inventario getInventario() {
+        return inventarioPersonaje;
+    }
+
+    public void agregarEquipamiento(Equipamiento equipamiento) {
+        this.inventarioPersonaje.agregarEquipamiento(equipamiento);
+        System.out.println(equipamiento.getNombre() + " ha sido añadido al inventario de " + nombre);
     }
 
 
